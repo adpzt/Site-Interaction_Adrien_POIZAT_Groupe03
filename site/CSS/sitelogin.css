@@ -1,0 +1,276 @@
+@font-face {
+    font-family: Liberation-Serif ;
+    src: url(LiberationSerif.ttf) format(truetype); 
+}
+
+* {          /* tout */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {overflow-x: hidden;}     /* cacher ce qui dépasse */ 
+
+.container {
+    height: 100vh;
+    background-color: #E6E6E6;
+    font-family: Liberation-Serif;
+}
+
+.fond {
+    height: 90%;
+    background: url(../Image/fondgris.png) no-repeat;
+    background-size: cover;
+}
+
+.fond.dark-mode {
+    background: rgb(0, 0, 0);
+}
+footer.dark-mode {
+    background-color: #1d1d1d;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh ;                       /* gerer la profondeur */
+    padding-bottom: 3vh;
+    gap: 1.56vw;                           /* gerer l'écart entre les titres */ 
+}
+
+.titre2{
+    height: 8.17vh;
+    width: auto;
+    margin-left: 570px; 
+}
+
+fieldset {
+    margin-left: 500px; 
+}
+
+button {
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* pour centrer le bouton */
+    width: 60px; 
+    height: 60px; 
+    background-color: #000;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+}
+
+button::after {
+    content: '\2601'; /* lune */
+    font-size: 37px; /* taille de la lune */
+    color: #ffffffe0; /* Couleur de la lune */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+}
+
+button:hover::before {
+    background-color: #2c2c2c;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 26%;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    margin-top: 17vh;
+}
+
+.box-text > h2 {
+    font-size: 1.9em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.137);
+    border: .1cap solid #fffdfd;
+    width: 22vw;
+    height: auto;
+    padding: 4%;
+    text-shadow: 1px 1px 12px rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    font-family: Liberation-Serif;
+    margin-top: 15vh;
+}
+
+.box-text2 > h2 {
+    padding: 4%;
+    width: 15vw;
+    height: auto;
+    font-family: Liberation-Serif;
+    font-size: 1.9em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.137);
+    border: .1cap solid #fffdfd;
+    text-shadow: 1px 1px 12px rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    margin-top: 8vh;
+}
+
+.boxFormulaire2{
+    margin-top: 10vh;
+}
+
+.boxFormulaire2 input,
+.boxFormulaire2 label {
+    margin-bottom: 20px; 
+}
+
+.boxFormulaire2 p,
+.boxFormulaire2 select {
+    margin-bottom: 7px; 
+}
+
+/*----------------------------*/
+
+/* DESIGN ENVOYER */
+.boxFormulaire input[type="submit"],
+.boxFormulaire2 input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+.boxFormulaire input[type="submit"]:hover,
+.boxFormulaire2 input[type="submit"]:hover {
+    background-color: #28812cd5;
+}
+
+/* DESIGN REINITIALISER */
+.boxFormulaire2 input[type="reset"] {
+    background-color: #960000; 
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.boxFormulaire2 input[type="reset"]:hover {
+    background-color: #660000e8;
+}
+
+/* DESIGN DES AUTRES CHAMPS */
+.boxFormulaire input[type="email"],
+.boxFormulaire2 input[type="email"],
+.boxFormulaire input[type="password"],
+.boxFormulaire2 input[type="password"],
+.boxFormulaire2 input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/*----------------------------*/
+
+#emailError {
+    background-color: #ff5555;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    position: fixed;
+    top: 620px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+}
+
+#emailError.show {
+    display: block; 
+}
+
+#pseudoError {
+    background-color: rgba(0, 0, 0, 0.336);
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    position: fixed;
+    top: 670px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+}
+
+#pseudoError.show {
+    display: block; 
+}
+
+#mdpError {
+    background-color: #ff5555;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    position: fixed;
+    top: 720px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+}
+
+#mdpError.show {
+    display: block; 
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+footer > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-decouvrir {
+    width: 84%;
+}
+
+.img-decouvrir:hover { transform: scale(1.02) }     /* effet zoom */

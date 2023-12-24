@@ -1,0 +1,311 @@
+@font-face {
+    font-family: Liberation-Serif ;
+    src: url(LiberationSerif.ttf) format(truetype); 
+}
+
+body { animation: fadeIn 1s ease-in-out;}  /* effet du début fond noir to transparent */
+@keyframes fadeIn {
+    from { opacity: 0;} /*  0/100%  */
+    to { opacity: 1;}   /* 100/100% */
+}
+
+html{
+    scroll-behavior: smooth;        /* pour scroll smooth si je fais un bouton */
+    overflow-x: hidden;             /* rogne */
+}
+
+* {          /* tout */             /* je reset a zéro */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #E6E6E6;
+    font-family: sans-serif;
+}
+
+.fond {
+    background: url(../Image/fondhyperpop.png) no-repeat;
+    width: 100vw;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6vh 0;                        /* gerer la profondeur */
+    gap: 1.56vw;                           /* gerer l'écart entre les titres */           
+}
+
+header>*{ transform: translateX(-1.4vw); }
+
+.titre1,
+.titre3{
+    height: 5.10vh;
+    width: auto;
+    transition: all 0.3s; 
+}
+
+.titre2{
+    height: 8.17vh;
+    width: auto;
+}
+
+.titre1:hover{ transform: scale(1.05) }
+.titre3:hover{ transform: scale(1.05) }
+
+/*-------------------------------------------------------------------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.box-text {
+    font-size: 1.5em;
+    width:  710px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: .2cap solid #000000;
+    color: rgb(255, 255, 255);
+    padding: 4%;
+    text-shadow: 1px 1px 12px rgba(0, 0, 0, 1);     /* ombre coté horizontal, ombre coté vertical, taile de l'ombre */
+    border-radius: 20px;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+    font-family: Liberation-Serif
+}
+
+#toggleMusique {
+    display: none;    /* Pour masquer la case à cocher */
+}
+
+#boutonMusique {
+    display: inline-block;
+    width: 8.85vw;
+    height: 17.3vh;
+    background: url(../Image/logo-musique.png) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: all 0.3s; 
+}
+
+#boutonMusique:hover{ transform: scale(1.05) }
+
+#boutonMusique img {
+    width: 100%; 
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+.artistasuivre{
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+}
+
+.artistasuivre>img{
+    width: 28vw;
+    height: auto;
+}
+
+.artist{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    margin-bottom: 5vh;
+}
+
+.imageETtexte{
+    display: flex;
+    align-items: center;
+}
+
+.imageETtexte>img{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.cover{
+    width: 12vw;
+    height: auto;
+}
+
+.texteP{
+    width: 12vw;
+    height: auto;
+}
+
+.texteL{
+    width: 20vw;
+    height: auto;
+}
+
+iframe{
+    border: 0;
+    border-radius:12px;
+    width: 40% ;
+    height: 16vh;
+    margin-top: 2vh;
+    margin-bottom: 8vh;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    gap: 1.2vw;
+}
+
+footer > a > img { width: 60px; }
+
+footer > a { margin-right: 1.04vw;}      /* Ajoute de l'espace entre les images */
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 839px) {
+    .titre1,
+    .titre3{
+    height: 3.8vh;
+    }
+    .titre2{
+    height: 7vh;
+    }
+    #boutonMusique {
+        width: 15vw;
+    }
+    .artistasuivre{
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+    }
+    
+    iframe{
+        width: 55% ;
+    }
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 760px) {
+    .box-text {
+        font-size: 1.4em;
+        width: 600px;
+    }
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 673px) {
+    .titre1,
+    .titre3{
+    height: 2.8vh;
+    }
+    .titre2{
+    height: 5.5vh;
+    }
+    .box-text {
+        font-size: 1.3em;
+        width: 500px;
+    }
+    .artistasuivre>img{
+        width: 45vw;
+        height: auto;
+    }
+    .cover{
+        width: 15vw;
+        height: auto;
+    }
+    
+    .texteP{
+        width: 15vw;
+        height: auto;
+    }
+    
+    .texteL{
+        width: 25vw;
+        height: auto;
+    }
+    
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 554px) {
+    .titre1,
+    .titre3{
+    height: 2.5vh;
+    }
+    .titre2{
+    height: 5vh;
+    }
+    .box-text {
+        width: 460px;
+    }
+    iframe{
+        width: 70% ;
+    }
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 430px) {
+    .titre1,
+    .titre3{
+    height: 2vh;
+    }
+    .titre2{
+    height: 4.5vh;
+    }
+    .box-text {
+        width: 390px;
+        font-size: 1.2em;
+    }
+    #boutonMusique {
+        width: 22vw;
+        height: 13vh;
+    }
+    iframe{
+        width: 78% ;
+        height: 19vh;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 390px) {
+    .box-text {
+        width: 340px;
+        font-size: 1.05em;
+    }
+    iframe{
+        width: 78% ;
+        height: 22vh;
+    }
+}
+
+/*------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 375px) {
+    iframe{
+        height: 19vh;
+    }
+}
